@@ -16,4 +16,11 @@ b = 10e5
 c = 22.8
 d = 22.8e-2
 print(a, b, c, d)
+
+[output]
+C:\ProgramData\Anaconda3\python.exe C:/Users/Administrator/PycharmProjects/chapter1/chapter1ex1.py
+10 1000000.0 22.8 0.228
+
+Process finished with exit code 0
+
 ```
