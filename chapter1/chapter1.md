@@ -9,10 +9,11 @@ Python 中， 数据类型总共有4种：
 #### 复数
 
 在Python代码中表示成：
-'''Python
+```Python
+
 a = 10
 b = 10e5
 c = 22.8
 d = 22.8e-2
 print(a, b, c, d)
-'''
+```
