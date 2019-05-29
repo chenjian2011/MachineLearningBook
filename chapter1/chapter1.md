@@ -100,8 +100,9 @@ print(list1[:-1])
 ```
 
 列表拼接 两种方法：
-1.
+
 ```Python 
+1.----------------------
 list3=[list1,list2]
 print(list3)
 [output]
@@ -114,8 +115,9 @@ chemistry 5
 
 @@使用逗号,拼接列表就是生成一个多维的矩阵， 第一个List作为矩阵的第一行， 第n个list作为矩阵的第n行。
 
-2.
+
 ```Python
+2.----------------------
 list4=list1+list2
 print(list4)
 [output]
