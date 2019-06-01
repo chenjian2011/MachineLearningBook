@@ -158,3 +158,35 @@ print(list1)
 tup1 = (50,)
 ```
 
+###1.2.3 字典
+
+字典是另一种可变容器模型，且可存储任意类型对象。
+
+字典的每个键值(key=>value)对用冒号(:)分割，每个对之间用逗号(,)分割，整个字典包括在花括号({})中 ,格式如下所示：
+
+```Python
+dict = {'Alice': '2341', 'Beth': '9102', 'Cecil': '3258'}
+
+这是一个典型的字典定义。
+
+for i in dict.items():
+    print(i)
+    print(list(i))
+    
+    
+[output]:
+for i in dict.items():
+
+    print(i)
+
+    print(list(i))
+
+('Alice', '2341')
+['Alice', '2341']
+('Beth', '9102')
+['Beth', '9102']
+('Cecil', '3258')
+['Cecil', '3258']
+
+
+
