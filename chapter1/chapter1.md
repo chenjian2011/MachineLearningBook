@@ -127,7 +127,3 @@ print(list4)
 
 
 
-list4=list1+list2
-print(list4)
-
-
