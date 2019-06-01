@@ -76,7 +76,9 @@ print "My name is %s and weight is %d kg!" % ('Zara', 21)
 
 列表是最常用的Python数据类型，它可以作为一个方括号内的逗号分隔值出现。
 
-列表的数据项不需要具有相同的类型
+列表的数据项不需要具有相同的类型；
+
+列表的内容可以改变；
 
 创建一个列表，只要把逗号分隔的不同的数据项使用方括号括起来即可。如下所示：
 ```Python
@@ -126,8 +128,33 @@ print(list4)
 @@使用加号，凭借列表就是扩展列表，将两个list合并为一个扩展的list.
 
 
-
+```Python
 list4=list1+list2
 print(list4)
+```
 
+@@ list.append(); 从末尾添加元素到列表；
+@@ list.insert(x,a);从位置x添加元素a到列表；
+
+@@ 元组转换为列表
+
+```Python
+tup1 = ('Google', 'Runoob', 1997, 2000);
+list1=[12]
+list1=list(tup1)
+print(list1)
+[output]:['Google', 'Runoob', 1997, 2000]
+```
+
+###1.2.2 元组
+
+元组和列表的结构相类似， 只是元组的内容不能被修改；
+
+其使用的方法与列表基本相同。
+
+@@@ 初始化一个元组
+
+```Python
+tup1 = (50,)
+```
 
