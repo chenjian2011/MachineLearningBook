@@ -178,22 +178,3 @@ for i in dict.items():
 [output]:
 for i in dict.items():
 ```
-
-
-
-
-
-
-    print(i)
-
-    print(list(i))
-
-('Alice', '2341')
-['Alice', '2341']
-('Beth', '9102')
-['Beth', '9102']
-('Cecil', '3258')
-['Cecil', '3258']
-
-
-
