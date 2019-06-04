@@ -309,3 +309,31 @@ if else 和Java 相同
 languages = ["C", "C++", "Perl", "Python"] 
 for x in languages:
 	print(x);
+```
+
+## 3. 函数
+
+### 3.1 无参函数
+
+```Python
+def hello():
+    print("hello world")
+```
+
+### 3.2 带参数函数
+
+```Python
+def area(width, height):
+    return width * height
+ 
+def print_welcome(name):
+    print("Welcome", name)
+ 
+print_welcome("Runoob")
+w = 4
+h = 5
+print("width =", w, " height =", h, " area =", area(w, h))
+```
+
+
+
