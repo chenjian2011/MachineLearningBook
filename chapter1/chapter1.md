@@ -263,4 +263,34 @@ for key in keys:
 print(d)
 
 ```
+### 1.2.4 集合
+集合（set）是一个无序的不重复元素序列。可以看成是一个没有value的字典
 
+```Python
+
+abc = set() # 定义一个空集合
+
+abc.add(6)
+abc.add("kid")
+print(abc)
+[output]
+{6,"abc"}
+
+abc={1,2,3,4,5,6,7,8,9}
+bcd=set('123456789')
+print(abc)# 注意区别bcd
+print(bcd)# 注意区别abc
+```
+@@@ 如果将相同的value添加到集合中， 那么该集合不会增加。 
+
+
+```Python
+a = {x for x in 'abracadabra' }
+print(a)
+b = {x for x in 'abracadabra' if x not in 'abc'}
+print(b)
+
+[output]
+{'a', 'b', 'r', 'd', 'c'}
+{'r', 'd'}
+```
