@@ -294,3 +294,18 @@ print(b)
 {'a', 'b', 'r', 'd', 'c'}
 {'r', 'd'}
 ```
+
+## 2. Python 程序结构
+
+@@ 程序结构注意缩进！！！
+
+### 2.1 判断
+
+if else 和Java 相同
+
+### 2.2 循环
+
+```Python
+languages = ["C", "C++", "Perl", "Python"] 
+for x in languages:
+	print(x);
