@@ -163,19 +163,103 @@ tup1 = (50,)
 
 字典是另一种可变容器模型，且可存储任意类型对象。
 
+
 字典的每个键值(key=>value)对用冒号(:)分割，每个对之间用逗号(,)分割，整个字典包括在花括号({})中 ,格式如下所示：
 
 ```Python
 dict = {'Alice': '2341', 'Beth': '9102', 'Cecil': '3258'}
 
+dict1 = {}  #一个空的字典。
+```
 这是一个典型的字典定义。
 
-for i in dict.items():
+```Python
+for i in dict.items():#遍历
     print(i)
     print(list(i))
     
     
 [output]:
-for i in dict.items():
+('Alice', '2341')
+['Alice', '2341']
+('Beth', '9102')
+['Beth', '9102']
+('Cecil', '3258')
+['Cecil', '3258']
 ```
-2
+注意输出的数据格式； print(i)为输出 tuple格式； print(list(i))为列表格式。
+
+```Python
+dict = {}
+dict['one'] = "1 - 菜鸟教程"
+dict[2]     = "2 - 菜鸟工具"
+ 
+tinydict = {'name': 'runoob','code':1, 'site': 'www.runoob.com'}
+ 
+ 
+print (dict['one'])       # 输出键为 'one' 的值
+print (dict[2])           # 输出键为 2 的值
+print (tinydict)          # 输出完整的字典
+print (tinydict.keys())   # 输出所有键
+print (tinydict.values()) # 输出所有值
+
+
+[output]
+1 - 菜鸟教程
+2 - 菜鸟工具
+{'name': 'runoob', 'code': 1, 'site': 'www.runoob.com'}
+dict_keys(['name', 'code', 'site'])
+dict_values(['runoob', 1, 'www.runoob.com'])
+```
+字典可以输出指定key的value
+字典可以输出完整的key-value值
+字典可以遍历所有的key和 value.
+
+@@ 注意的是字典是无序的。
+@@ 字典的Key是唯一的。
+
+字典的操作
+
+```Python
+
+dict0 = dict()  # 传一个空字典
+print('dict0:', dict0)
+ 
+dict1 = dict({'three': 3, 'four': 4})  # 传一个字典
+print('dict1:', dict1)
+ 
+dict2 = dict(five=5, six=6)  # 传关键字
+print('dict2:', dict2)
+ 
+dict3 = dict([('seven', 7), ('eight', 8)])  # 传一个包含一个或多个元祖的列表@@关键的关键
+print('dict3:', dict3)
+ 
+dict5 = dict(zip(['eleven', 'twelve'], [11, 12]))  # 传一个zip()函数
+print('dict5:', dict5)
+
+[output]
+dict0: {}
+dict1: {'four': 4, 'three': 3}
+dict2: {'five': 5, 'six': 6}
+dict3: {'seven': 7, 'eight': 8}
+dict5: {'twelve': 12, 'eleven': 11}
+```
+添加元素：
+
+```Python
+dict1['def']=4
+print(dict1)
+
+```
+遍历元素并搜索相应的值删除
+
+```Python
+d = {'a':1, 'b':0, 'c':1, 'd':0}
+keys = list(d.keys())  # 注意这里需要将字典的key改成list做遍历， 不然删除后，遍历条件会更改。
+print(keys)
+for key in keys:    
+   if((d[key])<1):
+    del d[key]
+print(d)
+
+```
