@@ -413,6 +413,7 @@ printinfo( name="runoob" )
 
 @@@ 不定长参数函数
 
+```Python
 def printinfo( arg1, *vartuple ):
    "打印任何传入的参数"
    print ("输出: ")
