@@ -263,3 +263,210 @@ for key in keys:
 print(d)
 
 ```
+### 1.2.4 集合
+集合（set）是一个无序的不重复元素序列。可以看成是一个没有value的字典
+
+```Python
+
+abc = set() # 定义一个空集合
+
+abc.add(6)
+abc.add("kid")
+print(abc)
+[output]
+{6,"abc"}
+
+abc={1,2,3,4,5,6,7,8,9}
+bcd=set('123456789')
+print(abc)# 注意区别bcd
+print(bcd)# 注意区别abc
+```
+@@@ 如果将相同的value添加到集合中， 那么该集合不会增加。 
+
+
+```Python
+a = {x for x in 'abracadabra' }
+print(a)
+b = {x for x in 'abracadabra' if x not in 'abc'}
+print(b)
+
+[output]
+{'a', 'b', 'r', 'd', 'c'}
+{'r', 'd'}
+```
+
+## 2. Python 程序结构
+
+@@ 程序结构注意缩进！！！
+
+### 2.1 判断
+
+if else 和Java 相同
+
+### 2.2 循环
+
+```Python
+languages = ["C", "C++", "Perl", "Python"] 
+for x in languages:
+	print(x);
+```
+
+```Python
+for x in range(1, 11):
+print(x)
+[output] 1,2,3,4,5,6,7,8,9,10
+
+```
+
+```Python
+for x in range(1, 11):
+...     print('{0:2d} {1:3d} {2:4d}'.format(x, x*x, x*x*x))
+...
+ 1   1    1
+ 2   4    8
+ 3   9   27
+ 4  16   64
+ 5  25  125
+ 6  36  216
+ 7  49  343
+ 8  64  512
+ 9  81  729
+10 100 1000
+```
+
+
+
+## 3. 函数
+
+### 3.1 无参函数
+
+```Python
+def hello():
+    print("hello world")
+```
+
+### 3.2 带参数函数
+
+```Python
+def area(width, height):
+    return width * height
+ 
+def print_welcome(name):
+    print("Welcome", name)
+ 
+print_welcome("Runoob")
+w = 4
+h = 5
+print("width =", w, " height =", h, " area =", area(w, h))
+```
+
+### 3.3 Python 函数需要注意的地方
+
+@@@ 不可变参数
+
+```Python
+def ChangeInt( a ):
+    a = 10
+ 
+b = 2
+ChangeInt(b)
+print( b ) # 结果是 2
+```
+解释上述代码是， 对象2， 一个变量b指向该对象。 当a最为参数被b调用的时候。 a,b同时指向2, 在
+函数中执行 a=10, 表示变量a又指向对象10； 所以 a=10, b=2
+
+@@@ 可变参数
+
+```Python
+
+def changeme( mylist ):
+   "修改传入的列表"
+   mylist.append([1,2,3,4])
+   print ("函数内取值: ", mylist)
+   return
+
+mylist = [10,20,30]
+changeme( mylist )
+print ("函数外取值: ", mylist)
+```
+
+@@@ 默认参数
+
+```Python
+def printinfo( name, age = 35 ):
+   "打印任何传入的字符串"
+   print ("名字: ", name)
+   print ("年龄: ", age)
+   return
+
+printinfo( age=50, name="runoob" )
+print ("------------------------")
+printinfo( name="runoob" )
+
+[output]
+名字:  runoob
+年龄:  50
+------------------------
+名字:  runoob
+年龄:  35
+```
+
+@@@ 不定长参数函数
+
+def printinfo( arg1, *vartuple ):
+   "打印任何传入的参数"
+   print ("输出: ")
+   print (arg1)
+   print (vartuple)
+ 
+printinfo( 70, 60, 50 )
+
+```
+
+## 4.导入 
+### 4.1 import
+创建一个fibo.py的文件， 该文件里有两个函数：fib2(n)；fib(n)； 
+那么：import fibo之后就用下面的代码用该文件的两个函数：
+fibo.fib2(2); fibo.fib(2)
+
+### 4.2from fibo import fib, fib2
+
+fib(2); fib2(2);   @@ 注意和4.1 的区别
+
+from modname import *； 把该模块的所有函数都导入。
+
+## 5.输入和输出
+### 5.1 输出
+print('{0} 和 {1}'.format('Google', 'Runoob'))
+Google 和 Runoob
+
+print('{name}网址： {site}'.format(name='菜鸟教程',site='www.runoob.com'))
+菜鸟教程网址： www.runoob.com
+
+### 5.2 输入
+
+str = input("请输入：");
+print ("你输入的内容是: ", str)
+
+### 5.3 文件读
+
+```Python
+f = open("/tmp/foo.txt", "r")# 打开一个文件
+for line in f:
+    print(line, end='')
+f.close()# 关闭打开的文件
+```
+
+### 5.3 文件写
+
+```Python
+
+f = open("/tmp/foo1.txt", "w")# 打开一个文件
+value = ('www.runoob.com', 14)# 当写入内容不是字符串格式， 需要将其转换为字符串
+s = str(value)
+f.write(s)
+f.close()# 关闭打开的文件
+```
+
+
+
