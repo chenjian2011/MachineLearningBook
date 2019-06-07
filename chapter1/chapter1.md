@@ -468,6 +468,17 @@ s = str(value)
 f.write(s)
 f.close()# 关闭打开的文件
 ```
+## 6 进阶内容
 
+### 6.1 排序
 
+```Python
+x = [4,1,2,3,6,2,1]
+y =sorted(x)
+print(y)#[1, 1, 2, 2, 3, 4, 6] x没被排序
+x.sort()  x 本身被排序
 
+```
+
+@@ 默认情况下，sort(sorted)都是从最小值到最大值进行排序， 其实就是其中的
+参数reverse=False, 可以在该方法中添加参数 reverse=True。列表元素就是从最大到最小排序。 
