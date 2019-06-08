@@ -413,6 +413,7 @@ printinfo( name="runoob" )
 
 @@@ 不定长参数函数
 
+```Python
 def printinfo( arg1, *vartuple ):
    "打印任何传入的参数"
    print ("输出: ")
@@ -467,6 +468,46 @@ s = str(value)
 f.write(s)
 f.close()# 关闭打开的文件
 ```
+## 6 进阶内容
+
+### 6.1 排序
+
+```Python
+x = [4,1,2,3,6,2,1]
+y =sorted(x)
+print(y)#[1, 1, 2, 2, 3, 4, 6] x没被排序
+x.sort()  x 本身被排序
+
+```
+
+@@ 默认情况下，sort(sorted)都是从最小值到最大值进行排序， 其实就是其中的
+参数reverse=False, 可以在该方法中添加参数 reverse=True。列表元素就是从最大到最小排序。 
+
+```Python
+x = sorted([4,3,-1,2], key=abs, reverse=True)  #  [4,3,2,-1]
+
+wc = sorted(word_couts.items(), key=lambda(word,count):count, reverse=True)
+ 从最高疏导最低数排序单词和计数
+ 
+```
+
+### 6.2 列表解析
 
 
+我们可能会想把一个列表转换成另外一个列表，例如只保留其中一些元素，或更改其中一些元素。 那么这些可以执行的
+Python 代码叫做  **列表解析**
 
+```Python
+
+a = [x for x in range(5) if x%2==0] #[0,2,4]
+b = [x*x for x in range(5)]  #[0,1,4,9,16]
+c = [x*x for x in a]  #[0,4,16]
+```
+
+类似，可以解析字典
+
+```Python
+square_dict={x:x*x for x in range(5)}   #{0:0,1:1,2:4,3:9,4:16}
+square_set = {x*x for x in [1,-1]} #{1}
+
+``` 
