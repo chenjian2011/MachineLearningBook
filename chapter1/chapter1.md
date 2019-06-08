@@ -510,4 +510,6 @@ c = [x*x for x in a]  #[0,4,16]
 square_dict={x:x*x for x in range(5)}   #{0:0,1:1,2:4,3:9,4:16}
 square_set = {x*x for x in [1,-1]} #{1}
 
-``` 
+```
+
+ 

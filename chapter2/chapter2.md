@@ -70,7 +70,7 @@ v2 = np.arange(2,5)  # 等价于 v2 = np.array(2,5,1) (start,stop,delimiter)
 
 print(v2.flatten()) # flatten函数，n x m 维矩阵 变为 n*m x 1 维
 =======
->>>>>>> refs/remotes/origin/master
+
 @@@
 创建全0的矩阵
 ```Python
