@@ -97,7 +97,25 @@ mat2 = np.random.randint(low=1,high=20,size=(30,40))#创建30x40 1~19之间的�
 print ('matrix generated from numpy.random.random is \n%s\n'%mat2)
 mat3 = np.random.randn(3,4) # 随机生成服从正态分布
 print ('matrix generated from numpy.random.randn is \n%s\n'%mat3)
+```
 
+随机分布的矩阵也可以这样来显示
+
+```Python
+numpy.random.normal(loc=0.0, scale=1.0, size=None)
+这里：
+loc：float
+    此概率分布的均值（对应着整个分布的中心centre）
+scale：float
+    此概率分布的标准差（对应于分布的宽度，scale越大越矮胖，scale越小，越瘦高）
+size：int or tuple of ints
+    输出的shape，默认为None，只输出一个值
+
+```
+那么输出1000个符合上述分布的随机数为：
+
+```Python
+num = numpy.random.normal(loc=0.0, scale=2.0,size=1000)
 ```
 
 
