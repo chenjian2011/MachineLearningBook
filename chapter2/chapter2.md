@@ -57,24 +57,28 @@ size: 6
 @@@ 
 创建指定数据的矩阵：  a = np.array([[2,23,4],[2,32,4]])  
 
-@@@
+@@@   
+
 注意！！！
 a = np.array(1,2,3,4)    # WRONG
+
 a = np.array([1,2,3,4])  # RIGHT 创建的时候是tuple内的list.  
 
-<<<<<<< HEAD
+
 
 @@@
 
 v2 = np.arange(2,5)  # 等价于 v2 = np.array(2,5,1) (start,stop,delimiter)
 
 print(v2.flatten()) # flatten函数，n x m 维矩阵 变为 n*m x 1 维
-=======
+
 
 @@@
+
 创建全0的矩阵
 ```Python
  a = np.zeros( [3,4] )  和  a = np.zeros((3,4)) 的效果是一样的。
+ 
 [output]
 array([[ 0.,  0.,  0.,  0.],
        [ 0.,  0.,  0.,  0.],
@@ -117,8 +121,53 @@ size：int or tuple of ints
 ```Python
 num = numpy.random.normal(loc=0.0, scale=2.0,size=1000)
 ```
+### 1.3 numpy数组切片
+```Python
+num = numpy.random.normal(loc=0.0, scale=2.0,size=1000)
+slice = num[2:1000:14] #[start:end:step]
+```
 
+@@@
+冒号 : 的解释：如果只放置一个参数，如 [2]，将返回与该索引相对应的单个元素。如果为 [2:]，表示从该
 
+索引开始以后的所有项都将被提取。如果使用了两个参数，如 [2:7]，那么则提取两个索引(不包括停止索
+
+引)之间的项。
+
+### 1.4 高级索引
+
+```Python
+import numpy as np 
+x = np.array([[1,  2],  [3,  4],  [5,  6]]) 
+y = x[[0,1,2],  [0,1,0]]  
+print (y)
+
+输出结果为：[1  4  5]
+```
+
+```Python
+import numpy as np 
+x = np.array([[  0,  1,  2],[  3,  4,  5],[  6,  7,  8],[  9,  10,  11]])  
+print ('我们的数组是：' )
+print (x)
+print ('\n')
+rows = np.array([[0,0],[3,3]]) 
+cols = np.array([[0,2],[0,2]]) 
+y = x[rows,cols]  
+print  ('这个数组的四个角元素是：')
+print (y)
+
+输出结果为：
+我们的数组是：
+[[ 0  1  2]
+ [ 3  4  5]
+ [ 6  7  8]
+ [ 9 10 11]]
+
+这个数组的四个角元素是：
+[[ 0  2]
+ [ 9 11]]
+```
 
 ## 2. pandas
 
