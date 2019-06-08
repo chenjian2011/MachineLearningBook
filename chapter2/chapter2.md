@@ -52,13 +52,16 @@ size: 6
 ### 1.2 创建 numpy 数组
 
 @@@
-创建指定数据的 数组： a = np.array([2,23,4],dtype=np.int)
+创建指定数据的 数组： a = np.array([2,23,4],dtype=np.int)  
+
 @@@ 
-创建指定数据的矩阵：  a = np.array([[2,23,4],[2,32,4]])
+创建指定数据的矩阵：  a = np.array([[2,23,4],[2,32,4]])  
+
 @@@
 注意！！！
 a = np.array(1,2,3,4)    # WRONG
-a = np.array([1,2,3,4])  # RIGHT 创建的时候是tuple内的list.
+a = np.array([1,2,3,4])  # RIGHT 创建的时候是tuple内的list.  
+
 
 @@@
 
