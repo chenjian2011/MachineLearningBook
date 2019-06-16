@@ -138,6 +138,8 @@ slice = num[2:1000:14] #[start:end:step]
 
 引)之间的项。</br>
 
+如果是[::2],则默认全选， 间隔2；
+
 ### 1.4 高级索引
 
 ```Python
@@ -152,6 +154,7 @@ print (y)
 ```Python
 import numpy as np 
 x = np.array([[  0,  1,  2],[  3,  4,  5],[  6,  7,  8],[  9,  10,  11]])  
+
 print ('我们的数组是：' )
 print (x)
 print ('\n')
@@ -172,6 +175,33 @@ print (y)
 [[ 0  2]
  [ 9 11]]
 ```
+
+
+
+### 1.5 处理矩阵形状
+
+
+```Python
+mat1 = np.random.randint(1, 20, [3, 5])
+mat3 = mat1.reshape(5, 3)
+mat2 = mat1.resize(5,3)
+```
+
+resize()函数会改变mat1, reshape 不会改变。
+
+取出部分矩阵
+
+```Python
+import numpy as np
+mat1 = np.arange(12).reshape(3, 4)
+
+mat2 = mat1[0:2,2:4]  # 注意这里 0:2 为零行~ 2-1行。   2:4 为第二列~4-1列。
+矩阵 0行0列开始。
+print(mat1)
+
+print(mat2)
+```
+
 
 ## 2. pandas
 
