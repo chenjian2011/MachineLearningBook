@@ -68,14 +68,16 @@ a = np.array([1,2,3,4])  # RIGHT 创建的时候是tuple内的list.
 
 @@@
 
+```Python
 v2 = np.arange(2,5)  # 等价于 v2 = np.array(2,5,1) (start,stop,delimiter)
 
 print(v2.flatten()) # flatten函数，n x m 维矩阵 变为 n*m x 1 维
-
+```
 
 @@@
 
 创建全0的矩阵
+
 ```Python
  a = np.zeros( [3,4] )  和  a = np.zeros((3,4)) 的效果是一样的。
  
@@ -87,6 +89,7 @@ array([[ 0.,  0.,  0.,  0.],
 
 @@@
 创建全1的矩阵
+
 ```Python
 a = np.ones( [3,4] )  和  a = np.ones((3,4)) 的效果是一样的。
 ```
@@ -121,6 +124,7 @@ size：int or tuple of ints
 ```Python
 num = numpy.random.normal(loc=0.0, scale=2.0,size=1000)
 ```
+
 ### 1.3 numpy数组切片
 ```Python
 num = numpy.random.normal(loc=0.0, scale=2.0,size=1000)
@@ -128,11 +132,11 @@ slice = num[2:1000:14] #[start:end:step]
 ```
 
 @@@
-冒号 : 的解释：如果只放置一个参数，如 [2]，将返回与该索引相对应的单个元素。如果为 [2:]，表示从该
+冒号 : 的解释：如果只放置一个参数，如 [2]，将返回与该索引相对应的单个元素。如果为 [2:]，表示从该</br>
 
 索引开始以后的所有项都将被提取。如果使用了两个参数，如 [2:7]，那么则提取两个索引(不包括停止索
 
-引)之间的项。
+引)之间的项。</br>
 
 ### 1.4 高级索引
 
