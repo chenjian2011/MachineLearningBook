@@ -30,7 +30,7 @@ for i in range(Length):
     if classifier.predict(sample_test)[i] != label_test[i]:  # 预测测试样本
         count += 1
 
-print(count)
-print((Length-count)/Length)
+print(count)  # 打印预测错误的样本数
+print((Length-count)/Length)  # 打印准确率
 ```
 
