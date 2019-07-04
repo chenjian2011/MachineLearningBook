@@ -66,4 +66,25 @@ print("测试标签数据集：{}".format(y_test.shape))
 训练标签数据集：(112,)
 测试数据集：(38, 4)
 测试标签数据集：(38,)
+
 ```
+
+到了这一步， 我们的数据已经分别整理出来了， 包括训练数据集和测试数据集。 
+分别保存到四个变量中：X_train,X_test,y_train,y_test。
+
+我们可以开始使用分类算法进行训练数据了：
+
+```Python
+knn = KNeighborsClassifier(n_neighbors=1)
+knn.fit(X_train,y_train)
+# 两行代码， 训练好了。
+
+new_data = np.array([[5, 2.9, 1, 0.2]])
+p = knn.predict(new_data)
+print(p)
+print("Target names: \n{}".format(iris_dataset['target_names'][p]))
+# 这里 用np.array的二维数组来进行测试参数数组的建立
+# iris_dataset['target_names']还记得么？ 是一个一维组数['setosa' 'versicolor' 'virginica']。 获得该数组的第一个元素应该就是 iris_dataset['target_name']这个数组下标为0的元素，即：
+iris_dataset['target_name'][0]
+```
+
