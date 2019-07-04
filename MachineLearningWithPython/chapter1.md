@@ -40,4 +40,19 @@ print("first five data:\n{}--".format(iris_dataset['data'][:5]))
 总而言之，我们的模型训练好之后，会一直记住整个训练集（驾校操场），所以该模型无法告诉我们对于新数据的预测能力。也就是该模型的 泛化能力（广泛数据的化解能力）我们无法得知。
 
 
-我们想要利用这些数据构建一个机器学习模型，
+我们想要利用这些数据构建一个机器学习模型，我们就需要用新数据来评估模型的性能。 新数据是指模型之前没有见过的数据，而我们有这些新数据的标签。
+
+通常的做法，是将收集好的数据， 这里是150朵花，分成两部分，一部分数据用于构建机器学习模型，叫做<b>训练数据 (training data)</b>或者 <b>训练集 (training set)</b>。其余的数据用来评估模型性能，叫做 <b>测试数据(test data)、测试集(test set)</b>。
+
+scikit-learn 中的train_test_split函数可以打乱数据集并进行拆分。这个函数将75%作为训练集，25%作为测试集。经验来说这种比例分配是最好的。
+
+scikit-learn 中的数据通常用大写的X来表示，标签用小写的 y表示。 因为数学公式f(x)=y. 
+x 是输入，通过函数计算得到输出y. 用大写的X来表示， 因为一般情况，数据集是一个二维数组，也就是我们说的矩阵，用小写y 因为输出目标为一个向量（一维数组），这也是数学的约定。
+
+```Python
+X_train,X_test,y_train,y_test = train_test_split(iris_dataset['data'],
+                                                 iris_dataset['target'],
+                                                 random_state=0)
+# train_test_split函数的参数： 1. mxn 矩阵， 2. m向量， 3. 随机种子数；
+# 就会生成四个变量 X_train,X_test,y_train,y_test。
+```
