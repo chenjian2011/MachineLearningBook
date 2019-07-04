@@ -55,4 +55,15 @@ X_train,X_test,y_train,y_test = train_test_split(iris_dataset['data'],
                                                  random_state=0)
 # train_test_split函数的参数： 1. mxn 矩阵， 2. m向量， 3. 随机种子数；
 # 就会生成四个变量 X_train,X_test,y_train,y_test。
+
+print("训练数据集：{}".format(X_train.shape))
+print("训练标签数据集：{}".format(y_train.shape))
+print("测试数据集：{}".format(X_test.shape))
+print("测试标签数据集：{}".format(y_test.shape))
+
+[output]:
+训练数据集：(112, 4)
+训练标签数据集：(112,)
+测试数据集：(38, 4)
+测试标签数据集：(38,)
 ```
