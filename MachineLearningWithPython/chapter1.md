@@ -16,7 +16,7 @@ iris_dataset = load_iris()
 #分类值  就是 data属于哪一类的值。0,1,2
 
 # 可以看出， 数组中包含了150朵不同花的测量数据。
-# 用机器学习的专业术语来说， 我们这里有150个样本，每个样本有3个特征。
+# 用机器学习的专业术语来说， 我们这里有150个样本，每个样本有4个特征。
 # 我们的这个数据就 样本数 x 特征数 形成了一个形状。 在scikit-learn 中数据始终遵循这个约定。
 
 print("first five data:\n{}--".format(iris_dataset['data'][:5]))
@@ -76,6 +76,7 @@ print("测试标签数据集：{}".format(y_test.shape))
 
 ```Python
 knn = KNeighborsClassifier(n_neighbors=1)
+#判断离点最近的一个邻居属于哪个类别。
 knn.fit(X_train,y_train)
 # 两行代码， 训练好了。
 
@@ -84,7 +85,36 @@ p = knn.predict(new_data)
 print(p)
 print("Target names: \n{}".format(iris_dataset['target_names'][p]))
 # 这里 用np.array的二维数组来进行测试参数数组的建立
-# iris_dataset['target_names']还记得么？ 是一个一维组数['setosa' 'versicolor' 'virginica']。 获得该数组的第一个元素应该就是 iris_dataset['target_name']这个数组下标为0的元素，即：
+# iris_dataset['target_names']还记得么？ 是一个一维组数['setosa' 'versicolor' 'virginica']。 
+获得该数组的第一个元素应该就是 iris_dataset['target_name']这个数组下标为0的元素，即：
 iris_dataset['target_name'][0]
 ```
+就这么简单， 你看， 我们已经使用了机器学习， 把150个数据集的数据进行KNN的分类训练。 训练出来的模型knn就可以对新数据进行分类了。 
+
+那么， 有没有同学怀疑， 凭什么这个分类结果就是对的呢？ 也就是说， 我们对于knn的这个模型的分类结果能否相信呢？ 
+scikit-learn 已经帮我们想好了， 它可以计算knn的精度来衡量模型的。
+
+```Python
+y_pred = knn.predict(X_test) # 对测试数据集的测试
+print("测试数据集的模型测试：\n{}".format(y_pred))
+print("测试标签数据集：\n{}".format(y_test))
+
+# 判断这两个数组的相同率有多少
+print("准确率：\n{:.2f}".format(np.mean(y_pred == y_test)))
+
+print("准确率：\n{:.2f}".format(knn.score(X_test,y_test)))
+```
+
+对于这个模型，准确率的精度为0.97。 也就是说我们的这个knn模型， 预测的准确率达到97%。 
+
+# 章节总结
+我们首先介绍了一个任务，就是通过花的不同特征来预测其品种。 在构建模型的时候， 我们用到了标注过的测试数据集，这些数据集已经给出了花的正确品种。 这是一个分类问题。 
+可能的品种被成为 <b>类别(class)</b>  ， 每朵花的品种被称为它的<b>标签(label)</b>.
+
+这些花的数据集包含了两个Numpy数组： 一个包含花的特征，在scikit-learn中通常表示X,一个包含正确的输出 （标签）， 通常表示y；数组X是特征的二维数组，每个数据点对应一行，每列对应一个特征值。数组y是个一维数组，里面包含一个类别标签，0~2的整数。
+
+我们通过scikit-learn 的train_test_split函数将数据集随机7/3分成训练数据集和测试数据集，训练数据集构建模型， 测试数据集用于评估模型的泛化能力。
+
+我们选择了k近邻分类算法，根据新点距离最近的邻居来预测。 该算法在KNeighborsClassifier类中实现，利用fit方法来构建模型，传入参数为X_train, y_train。 训练结束之后， 我们可以用score方法， X_test来测试y_test， 得到是否有足够的泛化能力。
+最后得出结果为97%. 算是比较满意的一个精度。
 
