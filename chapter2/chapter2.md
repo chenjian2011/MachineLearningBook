@@ -180,6 +180,17 @@ print (y)
  [ 9 11]]
 ```
 
+截取矩阵中的小矩阵或者向量
+```Python
+b_array=([[1,2,3],
+        [4,5,6],
+        [7,8,9]])
+
+a[1][:] = [4,5,6] 第一行的所有元素
+
+a[:,1] = [2,5,8]  第一列的所有元素
+
+```
 
 
 ### 1.5 处理矩阵形状
@@ -230,4 +241,44 @@ dtype: object
 
 ## 3. matplotlib
 
+画三维图：
+
+```Python
+from mpl_toolkits import mplot3d
+from sklearn.datasets import load_boston
+from matplotlib import pyplot as plt
+
+ax = plt.axes(projection='3d')
+data = load_boston()
+print(data['data'][:,7])
+print(data['target'].size)
+
+x = data['data'][:,6]
+y = data['data'][:,7]
+z = data['target']
+
+ax.scatter3D(x, y, z, c=z, cmap='Greens')
+
+plt.show()
+```
+
+画二维图：
+
+```Python
+from sklearn.datasets import load_boston
+from matplotlib import pyplot as plt
+
+ax = plt.axes(projection='3d')
+data = load_boston()
+print(data['data'][:,7])
+print(data['target'].size)
+
+x = data['data'][:,6]
+y = data['data'][:,7]
+z = data['target']
+
+plt.plot(x,y,z,'ob')
+
+plt.show()
+```
 
