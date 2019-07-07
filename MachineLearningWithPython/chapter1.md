@@ -1,7 +1,7 @@
 ```Python
 from sklearn.datasets import load_iris
 
-iris_dataset = load_iris()
+iris_dataset = load_iris()   
 
 #print("keys of iris_dataset: \n{}".format(iris_dataset.keys()))
 # output dict_keys(['data', 'target', 'target_names', 'DESCR', 'feature_names'])
