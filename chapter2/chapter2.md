@@ -2,6 +2,10 @@
 
 ## 1. numpy 
 
+
+
+Numpy 的矩阵计算（矩阵创建、矩阵计算）
+
 ### 1.1 numpy 基本概念
 
 @@ numpy 主要做矩阵计算的一个基础库
@@ -176,6 +180,17 @@ print (y)
  [ 9 11]]
 ```
 
+截取矩阵中的小矩阵或者向量
+```Python
+a=([[1,2,3],
+        [4,5,6],
+        [7,8,9]])
+
+a[1][:] = [4,5,6] 第一行的所有元素
+
+a[:,1] = [2,5,8]  第一列的所有元素
+
+```
 
 
 ### 1.5 处理矩阵形状
@@ -205,7 +220,65 @@ print(mat2)
 
 ## 2. pandas
 
+Pandas 是基于 NumPy 的一个开源 Python 库，它被广泛用于快速分析数据，以及数据清洗和
+准备等工作。它的名字来源是由“ Panel data”（面板数据，一个计量经济学名词）两个单词拼成
+的。简单地说，你可以把 Pandas 看作是 Python 版的 Excel。
 
+```Python
+import numpy as np
+import pandas as pd
+
+contries = ['usa', 'china', 'russia']
+my_data = [100, 200, 150]
+data = pd.Series(contries, my_data)
+print(data)
+[output]
+100       usa
+200     china
+150    russia
+dtype: object
+```
 
 ## 3. matplotlib
+
+画三维图：
+
+```Python
+from mpl_toolkits import mplot3d
+from sklearn.datasets import load_boston
+from matplotlib import pyplot as plt
+
+ax = plt.axes(projection='3d')
+data = load_boston()
+print(data['data'][:,7])
+print(data['target'].size)
+
+x = data['data'][:,6]
+y = data['data'][:,7]
+z = data['target']
+
+ax.scatter3D(x, y, z, c=z, cmap='Greens')
+
+plt.show()
+```
+
+画二维图：
+
+```Python
+from sklearn.datasets import load_boston
+from matplotlib import pyplot as plt
+
+ax = plt.axes(projection='3d')
+data = load_boston()
+print(data['data'][:,7])
+print(data['target'].size)
+
+x = data['data'][:,6]
+y = data['data'][:,7]
+z = data['target']
+
+plt.plot(x,y,z,'ob')
+
+plt.show()
+```
 

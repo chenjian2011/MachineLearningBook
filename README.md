@@ -7,7 +7,7 @@
 # 第五章：keras使用
 # 附加材料
 
-```Java
+```java
 public static void main(String[] args){}
 ```
 ![tianya](http://www.baidu.com/img/bdlogo.gif "tianyalogo")  
