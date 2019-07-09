@@ -42,9 +42,7 @@
 #线性回归   
 
 线性回归: 应该是以下公式：
-<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
-
-$$y=b+a_{0}x_{0}+a_{1}x_{1}+a_{2}x_{2}+a_{3}x_{3}+a_{4}x_{4}+a_{n}x_{n}$$
+<a href="https://www.codecogs.com/eqnedit.php?latex=$$y=b&plus;a_{0}x_{0}&plus;a_{1}x_{1}&plus;a_{2}x_{2}&plus;a_{3}x_{3}&plus;a_{4}x_{4}&plus;a_{n}x_{n}$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$$y=b&plus;a_{0}x_{0}&plus;a_{1}x_{1}&plus;a_{2}x_{2}&plus;a_{3}x_{3}&plus;a_{4}x_{4}&plus;a_{n}x_{n}$$" title="$$y=b+a_{0}x_{0}+a_{1}x_{1}+a_{2}x_{2}+a_{3}x_{3}+a_{4}x_{4}+a_{n}x_{n}$$" /></a>
 
 我们就需要计算出各个特征前面的系数值以及截距来拟合数据。 
 
@@ -83,6 +81,5 @@ plt.plot(X,y,'bo')
 plt.plot(X,result, color='red', linewidth=4)
 # 在画图中画出点及预测的直线。
 plt.show()
-
 ```
 
