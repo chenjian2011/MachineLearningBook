@@ -42,9 +42,9 @@
 #线性回归   
 
 线性回归: 应该是以下公式：
-<script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"> 
+<script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
 $$y=b+a_{0}x_{0}+a_{1}x_{1}+a_{2}x_{2}+a_{3}x_{3}+a_{4}x_{4}+a_{n}x_{n}$$
-</script>
+
 我们就需要计算出各个特征前面的系数值以及截距来拟合数据。 
 
 ```Python
