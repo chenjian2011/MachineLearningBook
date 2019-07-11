@@ -41,6 +41,8 @@
 
 #线性回归   
 
+https://www.codecogs.com/eqnedit.php  编写公式的网站
+
 线性回归: 应该是以下公式：
 <a href="https://www.codecogs.com/eqnedit.php?latex=$$y=b&plus;a_{0}x_{0}&plus;a_{1}x_{1}&plus;a_{2}x_{2}&plus;a_{3}x_{3}&plus;a_{4}x_{4}&plus;a_{n}x_{n}$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$$y=b&plus;a_{0}x_{0}&plus;a_{1}x_{1}&plus;a_{2}x_{2}&plus;a_{3}x_{3}&plus;a_{4}x_{4}&plus;a_{n}x_{n}$$" title="$$y=b+a_{0}x_{0}+a_{1}x_{1}+a_{2}x_{2}+a_{3}x_{3}+a_{4}x_{4}+a_{n}x_{n}$$" /></a>
 
@@ -58,7 +60,7 @@ data = pd.read_csv('files/Advertising.csv', index_col=0)
 npp = data.values
 # 将读入的dataframe格式数据转换为numpy的矩阵格式
 X = npp[:,0:1]
-# 截取该矩阵的第一列 ~ 第三列 为输入数据
+# 截取该矩阵的第一列为输入数据
 y = npp[:,3]
 # 截取矩阵的最后一列为输出数据
 X_train, X_test, y_train, y_test = train_test_split(X,y,random_state=5)
@@ -82,4 +84,10 @@ plt.plot(X,result, color='red', linewidth=4)
 # 在画图中画出点及预测的直线。
 plt.show()
 ```
+
+那我们思考一个问题？  系数是怎么得出来的？？ 
+
+这得从一个基本概念说起。 叫做 “猜谜语”。 专业一点就叫做预测。
+那么我们接下来，就要讲一个机器学习中非常重要的概念叫做 <b>梯度</b>。 
+
 
