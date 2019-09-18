@@ -1,3 +1,5 @@
+knn 算法。 基于距离的聚类/分类算法。
+
 ```Python
 from sklearn.datasets import load_iris
 
