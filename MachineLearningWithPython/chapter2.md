@@ -41,9 +41,53 @@
 
 #线性回归   
 
+https://www.codecogs.com/eqnedit.php  编写公式的网站
+
 线性回归: 应该是以下公式：
+<a href="https://www.codecogs.com/eqnedit.php?latex=$$y=b&plus;a_{0}x_{0}&plus;a_{1}x_{1}&plus;a_{2}x_{2}&plus;a_{3}x_{3}&plus;a_{4}x_{4}&plus;a_{n}x_{n}$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$$y=b&plus;a_{0}x_{0}&plus;a_{1}x_{1}&plus;a_{2}x_{2}&plus;a_{3}x_{3}&plus;a_{4}x_{4}&plus;a_{n}x_{n}$$" title="$$y=b+a_{0}x_{0}+a_{1}x_{1}+a_{2}x_{2}+a_{3}x_{3}+a_{4}x_{4}+a_{n}x_{n}$$" /></a>
 
-$$y=b+a_{0}x_{0}+a_{1}x_{1}+a_{2}x_{2}+a_{3}x_{3}+a_{4}x_{4}+a_{n}x_{n}$$
+我们就需要计算出各个特征前面的系数值以及截距来拟合数据。 
 
- 
+```Python
+
+import pandas as pd
+import numpy as np
+from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import train_test_split
+from matplotlib import pyplot as plt
+data = pd.read_csv('files/Advertising.csv', index_col=0)
+# 通过pandas的方法，很容易读入一个文档
+npp = data.values
+# 将读入的dataframe格式数据转换为numpy的矩阵格式
+X = npp[:,0:1]
+# 截取该矩阵的第一列为输入数据
+y = npp[:,3]
+# 截取矩阵的最后一列为输出数据
+X_train, X_test, y_train, y_test = train_test_split(X,y,random_state=5)
+# 进行分类 注意 等号左边变量的顺序。
+#print(X_train)
+#print("target traing sets\n {}".format(y_train))
+model = LinearRegression().fit(X_train,y_train)
+# 一句话 ， 进行线性回归模型的训练
+print(model.coef_)
+print(model.intercept_)
+# 该特征的系数和截距
+test = np.array([[41.5]])
+# 测试数据一定是矩阵格式。np.array
+print("result of 41.5 is {}".format(41.5*model.coef_+model.intercept_))
+print("result of model is {}".format(model.predict(test)))
+# 测试数据的输出结果。
+result = model.predict(X)
+# 将所有数据点放入模型中进行预测。
+plt.plot(X,y,'bo')
+plt.plot(X,result, color='red', linewidth=4)
+# 在画图中画出点及预测的直线。
+plt.show()
+```
+
+那我们思考一个问题？  系数是怎么得出来的？？ 
+
+这得从一个基本概念说起。 叫做 “猜谜语”。 专业一点就叫做预测。
+那么我们接下来，就要讲一个机器学习中非常重要的概念叫做 <b>梯度</b>。 
+
 
