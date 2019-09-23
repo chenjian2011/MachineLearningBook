@@ -26,7 +26,7 @@ print(array1)
 b = np.array([1,2,3,4])
 b.shape # 4 ; 
 
-```Python
+```Python    
 import numpy as np
 b = np.array([1,2,3,4,5])
 print(b.shape)
