@@ -63,6 +63,8 @@ bad
 print "My name is %s and weight is %d kg!" % ('Zara', 21)
 ```
 
+练习：
+
 ### 1.1.4. 运算符
 
 *： 乘法
@@ -83,7 +85,7 @@ print "My name is %s and weight is %d kg!" % ('Zara', 21)
 
 创建一个列表，只要把逗号分隔的不同的数据项使用方括号括起来即可。如下所示：
 ```Python
-list1 = ['physics', 'chemistry', 1997, 2000]
+list1 = ['physics', 'chemistry', 1997, 2000, 2]
 list2 = [1, 2, 3, 4, 5 ]
 
 print(list1[0],list2[5],list1[-1],list2[-3])
@@ -98,7 +100,7 @@ print(list1[2:])
 print(list1[:-1])
 [output]
 [1997, 2000, 2]
-[1997, 2000, 2, 2]
+[1997, 2000, 2]
 ['physics', 'chemistry', 1997, 2000, 2]
 ```
 
