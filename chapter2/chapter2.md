@@ -224,6 +224,9 @@ Pandas 是基于 NumPy 的一个开源 Python 库，它被广泛用于快速�
 准备等工作。它的名字来源是由“ Panel data”（面板数据，一个计量经济学名词）两个单词拼成
 的。简单地说，你可以把 Pandas 看作是 Python 版的 Excel。
 
+定义为：
+a = Series([])
+
 ```Python
 import numpy as np
 import pandas as pd
@@ -237,7 +240,75 @@ print(data)
 200     china
 150    russia
 dtype: object
+
+# 也可以这样写
+contries = ['usa', 'china', 'russia']
+my_data = [100, 200, 150]
+data = pd.Series(contries, index= my_data)# 这里的index表示索引， 可以省略。
+print(data)
+[output]
+100       usa
+200     china
+150    russia
+dtype: object
+
+#注意， 当索引是字母时，需要这样写：
+contries = ['usa', 'china', 'russia']
+data = pd.Series(contries, index=['a','b','c'])# 索引只能是int和字符串类型。
+print(data)
+[output]
+a       usa
+b     china
+b    russia
+dtype: object
+
+
+#或者省略索引直接写内容
+A = Series([14, 12, 13]) 
+
+[output]
+0    14
+1    12
+2    13
+dtype: int64
+
+
+# 仔细看下列代码的区别
+
+A = Series(['14', 12, 13], index=['a', 'b', 'c'])     
+print(A['a'])
+print(A[0])  
+             
+print(A['b'])
+print(A[1])  
+
+[output]
+14
+14
+12
+12
 ```
+###@@ 需要注意的是， pandas系列的下标在自定义的同时也有自己系统缺省的定义。
+
+
+其中需要理解的两种数据结构
+1）Series: 一维数组序列，与Numpy中的一维array类似。与 list结构也相类似。
+2）DataFrame，二维表格型的数据结构。 我们处理很多数据， 大多数都是以这种形式存储显示的。 
+
+
+```python
+A = Series(['first', 12, 13], index=['a', 'b', 'c'])  
+
+A.append('2')# 出错
+
+b = Series['2']
+A.append(b)
+
+
+
+# 需要注意的是
+```
+
 
 ## 3. matplotlib
 
