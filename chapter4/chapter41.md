@@ -93,9 +93,26 @@ df = df.fillna(df.mean()['A列':'B列'])
 # 用B列的均值来代替A列的缺失值。
 ```
 
-2. 数据删除
+#### 2. 数据删除
 如果在海量的数据前提下， 如果通过df.isnull()来判断该数据中缺失值较少。 删除
 不影响整体数据质量情况下，我们可以选择删除存在缺失值的行
+
 ```Python
 df.dropna()
 ```
+
+## 2. 数据抽取
+
+数据抽取指的是抽出指定位置的数据做成新的数据。 
+
+### 1. head(),tail()
+
+```Python
+import pandas as pd
+dt = pd.read_csv(r'k:\rz.csv', sep=',')
+print(dt.head())
+print(dt.tail())
+```
+
+
+
