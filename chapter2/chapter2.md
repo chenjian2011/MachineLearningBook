@@ -102,6 +102,7 @@ a = np.ones( [3,4] )  和  a = np.ones((3,4)) 的效果是一样的。
 创建全随机的矩阵
 
 ```Python
+abc = np.random.randint(1000,9999)
 mat1 = np.random.random(size=(3,4))# 创建一个 3x4的 0~1之间矩阵
 print ('matrix generated from numpy.random.random is \n%s\n'%mat1)
 mat2 = np.random.randint(low=1,high=20,size=(30,40))#创建30x40 1~19之间的矩阵
@@ -400,7 +401,12 @@ print(a)
 [output]
     name  age class
 1   andy   22     b
-2  peter   23     a   
+2  peter   23     a
+
+更改列表名：
+df.rename(columns={'A': 'AA', 'C': 'CC'}, inplace=True)
+将A 改为 AA.
+print(df)   
 ```
 
 
@@ -415,7 +421,7 @@ print(a)
 这一节主要讲解DataFrame文件的读和写。 非常关键和重要
 
 ```Python
-                                          
+# 读取k盘的csv文档，分隔符为逗号。                                          
 dt = pd.read_csv(r'k:\rz.csv', sep=',')   
 #read_csv函数读取csv, 还有read_table # txt文档, read_xls,read_sql等等。
 
