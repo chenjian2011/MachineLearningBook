@@ -401,6 +401,13 @@ print(a)
 1   andy   22     b
 2  peter   23     a
 
+顾名思义： iloc就是根据行列的下标号进行查询的一个函数
+比如下列：
+a = dataframe1.iloc[:,0:3], 输出0~2列所有行。
+a = dataframe1.iloc[0:3,:], 输出0~2行的所有列。
+a = dataframe1.iloc[ 1,1],  输出第1行，第1列的数值。
+      
+
 --------------------改改改----------------------------
 更改列表名：
 df.rename(columns={'A': 'AA', 'C': 'CC'}, inplace=True)
