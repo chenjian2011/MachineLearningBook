@@ -236,7 +236,9 @@ df = df.replace(['作弊', '缺考'], ['偷看', '没来']) ([被替换的词语
 
 
 
-### 交换行
+## 3.数据交换
+
+### 1. 交换行
 
 ```Python
 reindex=[1,2,0,3,5,7,9,11,13,15,17,19,4,6,8,10,12,14,16,18,20]
@@ -244,3 +246,35 @@ print(df)
 df = df.reindex(reindex)
 print(df)
 ```
+
+### 2. 交换列
+
+
+```Python
+import pandas as pd
+dt = pd.read_csv(r'k:\rz.csv', sep=',')
+
+
+dt_name = dt['姓名']
+dt_id = dt['学号']
+
+dt = dt.drop(columns=['姓名', '学号'], axis=1)
+
+dt.insert(0,dt_name.name,dt_name)# 三个参数 位置， 列名， 该列的具体内容 dt_name可以是元组或列表类型。
+print(dt.head())
+```
+
+## 4. 数据计算
+
+### 1. 数据合并
+
+用 df_new = concat(df1,df2); 或者 df1.append(df2, ignore_index=True) 来进行追加。
+
+
+### 2. 追加列
+
+df['abc']#  abc为新列名
+df['abc'] = df_new_list
+
+@@@ 要注意的是： 如果列要做计算 需要将列的变量类型进行转换：  比如 df['name']=astype(string), df['age']=astype(int)
+
