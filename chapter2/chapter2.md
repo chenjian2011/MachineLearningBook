@@ -103,7 +103,7 @@ a = np.ones( [3,4] )  和  a = np.ones((3,4)) 的效果是一样的。
 
 ```Python
 abc = np.random.randint(1000,9999)
-mat1 = np.random.random(size=(3,4))# 创建一个 3x4的 0~1之间矩阵
+mat1 = np.random.random(size=(3,4))# 创建一个 3x4的 0~1之间矩阵  # 注意这个size 的用法， 可以有多个参数 size=(3,4,5),size=(3,2,4,5)
 print ('matrix generated from numpy.random.random is \n%s\n'%mat1)
 mat2 = np.random.randint(low=1,high=20,size=(30,40))#创建30x40 1~19之间的矩阵
 print ('matrix generated from numpy.random.random is \n%s\n'%mat2)
@@ -217,6 +217,120 @@ print(mat1)
 
 print(mat2)
 ```
+
+### 1.5 统计
+
+1. 行、列的最大值和最小值  amax, amin
+
+```Python
+import numpy as np 
+a = np.array([[3,7,5],[8,4,3],[2,4,9]])  
+print  '我们的数组是：'  
+print a 
+print  '\n'  
+print  '------行最小值---------'  
+print np.amin(a,1)  
+print  '\n'  
+print  '------列最小值---------'  
+print np.amin(a,0)  
+print  '\n'  
+print  '最大值：'  
+print np.amax(a)  
+print  '\n'  
+print  '列最大值：'  
+print np.amax(a, axis =  0)
+
+```
+
+2. numpy.ptp()函数计算数组中元素最大值与最小值的差（最大值 - 最小值）(所有元素)。
+
+```Python
+a = np.array([[3, 7, 5], [8, 4, 3], [2, 4, 9]])
+print('我们的数组是：')
+print(a)
+
+print('调用 ptp() 函数：')
+print(np.ptp(a))
+
+print('沿轴 1 调用 ptp() 函数：')
+print(np.ptp(a, axis=1))
+
+print('沿轴 0 调用 ptp() 函数：')
+print(np.ptp(a, axis=0))
+
+[output]
+我们的数组是：
+[[3 7 5]
+ [8 4 3]
+ [2 4 9]]
+调用 ptp() 函数：
+7
+沿轴 1 调用 ptp() 函数：
+[4 5 7]
+沿轴 0 调用 ptp() 函数：
+[6 3 6]
+```
+
+3. 其他函数
+
+numpy.mean(), numpy.median()  与 ptp函数 用法类似。
+
+
+4. 排序
+
+```Python
+import numpy as np  
+ 
+a = np.array([[3,7],[9,1]])  
+print ('我们的数组是：')
+print (a)
+print ('调用 sort() 函数：')
+print (np.sort(a))
+print ('按列排序：')
+print (np.sort(a, axis =  0))
+# 在 sort 函数中排序字段 
+dt = np.dtype([('name',  'S10'),('age',  int)]) 
+a = np.array([("raju",21),("anil",25),("ravi",  17),  ("amar",27)], dtype = dt)  
+print ('我们的数组是：')
+print (a)
+print ('按 name 排序：')
+print (np.sort(a, order =  'name'))
+```
+
+
+5.矩阵计算
+
+##### 相乘。。。内积/乘积
+```Python
+import numpy.matlib
+import numpy as np
+ 
+a = np.array([[1,2],[3,4]])
+b = np.array([[11,12],[13,14]])
+print(np.dot(a,b))
+
+[output]
+[[37  40] 
+ [85  92]]
+```
+
+##### 向量积
+```Python
+import numpy as np 
+ 
+a = np.array([[1,2],[3,4]]) 
+b = np.array([[11,12],[13,14]]) 
+ 
+# vdot 将数组展开计算内积
+print (np.vdot(a,b))
+
+[output]
+130
+### 1*11 + 2*12 + 3*13 + 4*14 = 130
+```
+
+### 考虑一个问题：
+
 
 
 ## 2. pandas
