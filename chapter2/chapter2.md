@@ -300,6 +300,19 @@ print (np.sort(a, order =  'name'))
 
 5.矩阵计算
 
+#### 相加， 相减
+
+```Python
+import numpy as np
+
+a =np.array([[1, 2, 3],[2,3,4]])
+b =np.array([[10, 20, 30],[20,30,40]])
+
+
+print(a-b)
+print(a+b)
+```
+
 ##### 相乘。。。内积/乘积
 ```Python
 import numpy.matlib
@@ -329,7 +342,15 @@ print (np.vdot(a,b))
 ### 1*11 + 2*12 + 3*13 + 4*14 = 130
 ```
 
-### 考虑一个问题：
+
+### 其他计算函数
+
+np.square 平方
+np.sum 相加
+。。。。
+
+
+### 考虑一个问题：real_data=[60.1,22,4,32,.... 33.5,53.4]
 
 
 
