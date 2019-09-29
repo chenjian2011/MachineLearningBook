@@ -206,3 +206,41 @@ print(new_data.drop(['电话'],axis=1))
 print(new_data.drop([0],axis=0))
 ```
 
+### 3. 修改记录
+
+1. 个别替换
+
+df.replace('a','b')  # 把a用b进行替换
+
+2. 批量替换
+
+```Python
+import pandas as pd
+# 把作弊， 和缺考统统替换为0
+df = pd.read_csv(r'd:\textfiles\rz.csv', delimiter=',')
+df = df.replace(['作弊', '缺考'], 0)
+print(df)
+```
+
+3. 特定替换
+
+```Python
+# replace({'列名'：'该列的某一单元内容','列名'：'该列的某一单元内容','列名'：'该列的某一单元内容'},需替换的内容)
+```
+
+4. 多值替换
+
+```Python
+df = df.replace(['作弊', '缺考'], ['偷看', '没来']) ([被替换的词语列表],[替换新的词语列表])
+```
+
+
+
+### 交换行
+
+```Python
+reindex=[1,2,0,3,5,7,9,11,13,15,17,19,4,6,8,10,12,14,16,18,20]
+print(df)
+df = df.reindex(reindex)
+print(df)
+```
