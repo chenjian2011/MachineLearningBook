@@ -273,8 +273,25 @@ print(dt.head())
 
 ### 2. 追加列
 
+```Python
 df['abc']#  abc为新列名
 df['abc'] = df_new_list
-
+df['abc']=['1','2','3','4']
 @@@ 要注意的是： 如果列要做计算 需要将列的变量类型进行转换：  比如 df['name']=astype(string), df['age']=astype(int)
 
+```
+
+### 3. 追加行
+
+1. 行内容用 字典格式先定义好。
+2. 用append进行添加。
+
+```Python
+new=pd.DataFrame({'name':'lisa',
+                  'gender':'F',
+                  'city':'北京',
+                  'age':19,
+                  'score':100},
+                 )   
+df1=df1.append(new,ignore_index=True)   # ignore_index=True,表示不按原来的索引，从0开始自动递增
+```
