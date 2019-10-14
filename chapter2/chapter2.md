@@ -249,13 +249,13 @@ a = np.array([[3, 7, 5], [8, 4, 3], [2, 4, 9]])
 print('我们的数组是：')
 print(a)
 
-print('调用 ptp() 函数：')
+print('矩阵中最大差值')
 print(np.ptp(a))
 
-print('沿轴 1 调用 ptp() 函数：')
+print('每行最大差值 ：')
 print(np.ptp(a, axis=1))
 
-print('沿轴 0 调用 ptp() 函数：')
+print('每列最大差值')
 print(np.ptp(a, axis=0))
 
 [output]
@@ -352,6 +352,11 @@ np.sum 相加
 
 ### 考虑一个问题：real_data=[60.1,22,4,32,.... 33.5,53.4]
 
+2x + 3y = 17          
+4x + 6y = 26
+
+2 3   x    17 
+4 6   y    26
 
 
 ## 2. pandas
@@ -608,7 +613,7 @@ print(dt)
 
 读取excel 第几张 sheet
 
-
+df = pd.read_excel(r'k:\rz.xlsx', sheetname='Sheet2')
 
 
 ## 3. matplotlib
