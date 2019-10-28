@@ -307,7 +307,8 @@ df1=df1.append(new,ignore_index=True)   # ignore_index=True,表示不按原来�
 
 Mean：总和/总数
 Median: 从小到大排序的中间位置
-Mode: 找出最多次出现的数， 如果最多次出现的多个数，则都列出，则返回一个DataFrame类型变量。
+Mode: 找出最多次出现的数， 如果最多次出现的多个数，则这些数都列出，则返回一个DataFrame类型变量。
+
 @@@ 填入该列出现频次最高的数：df['数分'] = df['数分'].fillna(df['数分'].mode().iloc[0])
 另： 描述性统计分析函数： describe。 该函数可以返回均值、标准差、最大值、最小值等信息
 
