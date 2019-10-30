@@ -15,7 +15,7 @@
 左侧的是一组两列数字：这是从安居客上抓取下来的二手房房屋面积和售价的信息。 
 右侧是这组6个在售房屋的折线图： 横坐标为面积（平方米），纵坐标为价格（百万）。
 
-![机器学习路径](https://github.com/chenjian2011/MachineLearningBook/blob/master/chapter4/pics/Snipaste_2019-10-30_09-32-19_gd1.png)
+![机器学习路径](https://github.com/chenjian2011/MachineLearningBook/blob/master/chapter4/pics/Snipaste_2019-10-30_09-32-19_gd1.png?row=true)
 
 
 
