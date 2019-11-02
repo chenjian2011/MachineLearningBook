@@ -56,8 +56,9 @@
  接下来，我们就需要想， 按照什么方法来找到该函数的误差？？？
  
 我们用ERROR来代表误差：
-下图为例：
+那么， 我们可以用下图来表示ERROR的总误差：
 ![误差公式](https://gitee.com/babyspa/pics/raw/master/gd3.gif)
+如果这个误差达到
  
   
 
