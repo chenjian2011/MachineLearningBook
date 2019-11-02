@@ -15,7 +15,7 @@
 左侧的是一组两列数字：这是从安居客上抓取下来的二手房房屋面积和售价的信息。 
 右侧是这组6个在售房屋的折线图： 横坐标为面积（平方米），纵坐标为价格（百万）。
 
-![机器学习路径](https://github.com/chenjian2011/MachineLearningBook/blob/master/pics/gd1.jpg?raw=true)
+![机器学习路径](https://pan.baidu.com/s/1tcBs5dy0nDAJ1NB6bLJ_lw)
 
 
 那么， 我们看一下这组数据， 基本上，面积和价格是呈现一种线性的关系。 
