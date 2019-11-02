@@ -55,7 +55,9 @@
  这个例子中， 我们观察了5次， 应该观察6次（为什么？）
  接下来，我们就需要想， 按照什么方法来找到该函数的误差？？？
  
-我们用ERROR来代表误差： 误差就是ERROR= f(x') - f(x)
+我们用ERROR来代表误差：
+下图为例：
+![误差公式](https://gitee.com/babyspa/pics/raw/master/gd3.gif)
  
   
 
