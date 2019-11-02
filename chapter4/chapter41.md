@@ -58,7 +58,7 @@ import pandas as pd
 
 df = pd.DataFrame(np.random.randint(low=2, high=10, size=(5, 6)))
 print(df)
-df.iloc[2:4, 1:3] = np.nan # 该矩阵的 第1行~第2行， 第0列到第2列 改为NAN
+df.iloc[2:4, 1:3] = np.nan # 该矩阵的 第2行~第3行， 第1列到第2列 改为NAN
 print(df)
 '''
    0  1  2  3  4  5
