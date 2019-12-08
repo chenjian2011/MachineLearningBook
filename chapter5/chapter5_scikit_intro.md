@@ -2,8 +2,6 @@
 
 #1. scikit-learn的数据集
 
-
-
 ##例子：  iris 花的分类数据集
 ```python
 
@@ -210,4 +208,12 @@ load_linnerud([return_X_y])	Load and return the linnerud dataset (multivariate r
 load_wine([return_X_y])	Load and return the wine dataset (classification).
 load_breast_cancer([return_X_y])	Load and return the breast cancer wisconsin dataset (classification).
 
+这些数据集都可以用 X,y = load_xxxxx(return_X_y=True) 来获得两个list变量。
+
+
+
+
+### 机器学习路径：
+
+![机器学习路径](https://img-blog.csdn.net/20160930051801241?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
 
