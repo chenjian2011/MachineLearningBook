@@ -295,6 +295,18 @@ new=pd.DataFrame({'name':'lisa',
                  )   
 df1=df1.append(new,ignore_index=True)   # ignore_index=True,表示不按原来的索引，从0开始自动递增
 ```
+### 4. 排序
+```python
+import pandas as pd
+dt = pd.read_csv(r'd:\textfiles\rz.csv', sep='\t',encoding='gbk')
+print(dt.head())
+dt['英语+数分'] = dt['英语']+dt['数分']
+print(dt['英语+数分'])
+
+dt.append(dt['英语+数分'])
+dt = dt.sort_values(by='英语+数分',ascending=False)
+print(dt[0:3])
+```
 
 # 数据分析
 ## 基本统计分析
